@@ -1,0 +1,40 @@
+# Arduino / C++ build outputs
+build/
+*.elf
+*.hex
+*.bin
+*.map
+*.o
+*.a
+*.d
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Arduino IDE temp files
+*.tmp
+*.bak
+*.orig
+*.ino.cpp
+
+# OS metadata
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.vscode-arduino/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Keep ESC configs
+!*.xml
