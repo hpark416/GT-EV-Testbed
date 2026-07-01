@@ -17,6 +17,19 @@ Arduino Mega RX1 (D19) -> FT85BD COMM TX  (use 3.3 V level shifter)
 All grounds common.
 ```
 
+### Arduino Nano ESP32 (UartSpeedController_NanoESP32)
+
+```text
+Radiolink CH2 -> D2
+Radiolink CH4 -> D3
+
+Nano D9 (TX) -> FT85BD COMM RX
+Nano D8 (RX) -> FT85BD COMM TX
+GND          -> FT85BD COMM GND
+```
+
+Nano ESP32 UART is 3.3 V (direct connection to FT85BD COMM is typical). Built and uploaded via PlatformIO from `Arduino/UartSpeedController_NanoESP32/`.
+
 ## FT85BD UART (COMM port)
 
 ```text

@@ -12,17 +12,40 @@
 
 class VescUart {
 public:
-  void begin(HardwareSerial &serial, unsigned long baud = 115200) {
+  void begin(HardwareSerial &serial, unsigned long baud = 115200,
+             int8_t rxPin = -1, int8_t txPin = -1) {
     port_ = &serial;
+#if defined(ARDUINO_ARCH_ESP32)
+    if (rxPin >= 0 && txPin >= 0) {
+      port_->begin(baud, SERIAL_8N1, rxPin, txPin);
+    } else {
+      port_->begin(baud);
+    }
+#else
+    (void)rxPin;
+    (void)txPin;
     port_->begin(baud);
+#endif
     resetRxState();
   }
 
   void poll() {
     while (port_->available()) {
-      processByte(port_->read());
+      const uint8_t b = port_->read();
+      rxBytes_++;
+      if (lastRawLen_ < sizeof(lastRaw_)) {
+        lastRaw_[lastRawLen_++] = b;
+      }
+      processByte(b);
     }
   }
+
+  uint32_t rxBytes() const { return rxBytes_; }
+  void clearRxBytes() { rxBytes_ = 0; }
+
+  uint8_t lastRawLen() const { return lastRawLen_; }
+  const uint8_t *lastRaw() const { return lastRaw_; }
+  void clearLastRaw() { lastRawLen_ = 0; }
 
   bool sendFwVersion() { return sendPacket(COMM_FW_VERSION, nullptr, 0); }
 
@@ -76,6 +99,9 @@ private:
   bool fwValid_ = false;
   uint8_t fwMajor_ = 0;
   uint8_t fwMinor_ = 0;
+  uint32_t rxBytes_ = 0;
+  uint8_t lastRaw_[16] = {};
+  uint8_t lastRawLen_ = 0;
 
   static const uint8_t RX_BUF_SIZE = 128;
   uint8_t rxBuf_[RX_BUF_SIZE];

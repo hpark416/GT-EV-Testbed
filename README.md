@@ -124,6 +124,7 @@ Slave ESC ID: 102
 │   ├── SpeedReverseController/
 │   ├── CurrentReverseController/
 │   ├── UartSpeedController/
+│   ├── UartSpeedController_NanoESP32/   (PlatformIO, Arduino Nano ESP32)
 │   ├── Diagnostics/
 │   └── Experimental/
 ├── Configs/
@@ -177,10 +178,14 @@ See `Docs/Wiring/README.md` for the full pin map including PPM and RC wiring.
 
 ### 3. Upload firmware
 
-1. Open `Arduino/UartSpeedController/UartSpeedController.ino` in the Arduino IDE.
-2. Select board **Arduino Mega 2560** and the correct COM port.
-3. Leave `ENABLE_UART_RPM_CONTROL` set to **`false`** for the first test (telemetry only).
-4. Upload the sketch.
+**Arduino Mega (Arduino IDE):** open `Arduino/UartSpeedController/UartSpeedController.ino`.
+
+**Arduino Nano ESP32 (PlatformIO):** open `Arduino/UartSpeedController_NanoESP32/` and run `pio run -t upload` (see that folder's `README.md`). Uses D8/D9 for FT85BD UART; 3.3 V logic — no level shifter needed.
+
+For either board:
+
+1. Leave `ENABLE_UART_RPM_CONTROL` set to **`false`** for the first test (telemetry only).
+2. Upload the sketch.
 
 ### 4. Verify telemetry
 
