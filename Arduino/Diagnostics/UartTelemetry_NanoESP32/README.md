@@ -158,5 +158,5 @@ Source reference in repo tooling: `ESCtool/Flipsky ESC Tool/.../ftesc_v1.4_1.5_1
 
 After both halves read voltage and IDs correctly:
 
-1. Port `../../UartSpeedController_NanoESP32/` from `VescUart.h` to `FlipskyUart.h` (still on VESC protocol today).
-2. Reuse `DUAL_UART_PORTS` pattern — `Serial1` master, `Serial2` slave — for control + telemetry.
+1. Flash `../../UartSpeedController_NanoESP32/` with `ENABLE_UART_RPM_CONTROL = false` and confirm boot harness check.
+2. Enable RPM control only after telemetry is stable (wheels off ground, low RPM limits).

@@ -9,6 +9,19 @@ enum FlipskyUartCommand : uint8_t {
   FTESC_UART_CAN_FORWARD = 16,
   FTESC_UART_OBTAIN_FIRMWARE_VERSION = 17,
   FTESC_UART_KEEP_LIVE = 25,
+  FTESC_UART_SET_CURRENT = 4,
+  FTESC_UART_SET_CURRENT_GEAR = 5,
+  FTESC_UART_SET_CURRENT_GEAR_AND_OBTAIN_DATA = 32,
+  FTESC_UART_SET_SPEED = 39,
+};
+
+// Flipsky gear bytes (VX-remote style; used with cmd 5 / 32).
+enum FlipskyUartGear : uint8_t {
+  FTESC_GEAR_NEUTRAL = 0,
+  FTESC_GEAR_FORWARD_LOW = 1,
+  FTESC_GEAR_FORWARD_MED = 2,
+  FTESC_GEAR_FORWARD_HIGH = 3,
+  FTESC_GEAR_REVERSE = 4,
 };
 
 class FlipskyUart {
@@ -62,6 +75,79 @@ public:
     uint8_t payload[2];
     payload[0] = FTESC_UART_CAN_FORWARD;
     payload[1] = canId;
+    return sendPayload(payload, sizeof(payload));
+  }
+
+  // Set motor current (cmd 4). Value is microamps (A * 1e6), signed.
+  // Use with ESC Control Mode: Current Bidirectional.
+  bool setCurrent(int32_t currentMicroA, uint8_t forwardCanId = 0) {
+    uint8_t inner[5];
+    inner[0] = FTESC_UART_SET_CURRENT;
+    writeInt32(&inner[1], currentMicroA);
+
+    if (forwardCanId == 0) {
+      return sendPayload(inner, sizeof(inner));
+    }
+
+    uint8_t payload[7];
+    payload[0] = FTESC_UART_CAN_FORWARD;
+    payload[1] = forwardCanId;
+    memcpy(&payload[2], inner, sizeof(inner));
+    return sendPayload(payload, sizeof(payload));
+  }
+
+  // Set motor current with gear byte (cmd 5). Current magnitude in microamps.
+  bool setCurrentGear(uint8_t gear, int32_t currentMicroA,
+                      uint8_t forwardCanId = 0) {
+    uint8_t inner[6];
+    inner[0] = FTESC_UART_SET_CURRENT_GEAR;
+    inner[1] = gear;
+    writeInt32(&inner[2], currentMicroA);
+
+    if (forwardCanId == 0) {
+      return sendPayload(inner, sizeof(inner));
+    }
+
+    uint8_t payload[8];
+    payload[0] = FTESC_UART_CAN_FORWARD;
+    payload[1] = forwardCanId;
+    memcpy(&payload[2], inner, sizeof(inner));
+    return sendPayload(payload, sizeof(payload));
+  }
+
+  // VX-remote style: set gear + current and receive telemetry (cmd 32).
+  bool setCurrentGearAndObtain(uint8_t gear, int32_t currentMicroA,
+                               uint8_t forwardCanId = 0) {
+    uint8_t inner[6];
+    inner[0] = FTESC_UART_SET_CURRENT_GEAR_AND_OBTAIN_DATA;
+    inner[1] = gear;
+    writeInt32(&inner[2], currentMicroA);
+
+    if (forwardCanId == 0) {
+      return sendPayload(inner, sizeof(inner));
+    }
+
+    uint8_t payload[8];
+    payload[0] = FTESC_UART_CAN_FORWARD;
+    payload[1] = forwardCanId;
+    memcpy(&payload[2], inner, sizeof(inner));
+    return sendPayload(payload, sizeof(payload));
+  }
+
+  // Set target speed/RPM (cmd 39). Use forwardCanId=0 for direct UART to this port.
+  bool setSpeed(int32_t rpm, uint8_t forwardCanId = 0) {
+    uint8_t inner[5];
+    inner[0] = FTESC_UART_SET_SPEED;
+    writeInt32(&inner[1], rpm);
+
+    if (forwardCanId == 0) {
+      return sendPayload(inner, sizeof(inner));
+    }
+
+    uint8_t payload[7];
+    payload[0] = FTESC_UART_CAN_FORWARD;
+    payload[1] = forwardCanId;
+    memcpy(&payload[2], inner, sizeof(inner));
     return sendPayload(payload, sizeof(payload));
   }
 
@@ -182,6 +268,13 @@ private:
 
   static float readF32(const uint8_t *data, float scale, int32_t &index) {
     return (float)readI32(data, index) / scale;
+  }
+
+  static void writeInt32(uint8_t *dst, int32_t value) {
+    dst[0] = (uint8_t)((value >> 24) & 0xFF);
+    dst[1] = (uint8_t)((value >> 16) & 0xFF);
+    dst[2] = (uint8_t)((value >> 8) & 0xFF);
+    dst[3] = (uint8_t)(value & 0xFF);
   }
 
   bool sendCommand(uint8_t command) {
