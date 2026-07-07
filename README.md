@@ -77,8 +77,8 @@ The goal of this project is to develop a low-cost, modular electric vehicle plat
 |---|---:|
 | ESC | FLIPSKY FT85BD |
 | Configuration | Dual motor |
-| Current Control Method | PPM (primary) |
-| UART Interface | Serial telemetry + optional ERPM control (`UartSpeedController`) |
+| Current Control Method | PPM + UART telemetry (Flipsky protocol) |
+| Active tuning focus | Duty-cycle mode for low-ERPM crawl |
 
 ---
 
@@ -126,6 +126,8 @@ Slave ESC ID: 102
 │   ├── UartSpeedController/
 │   ├── UartSpeedController_NanoESP32/   (PlatformIO, Arduino Nano ESP32)
 │   ├── Diagnostics/
+│   │   ├── UartTelemetry_NanoESP32/
+│   │   └── UartTelemetryLogger_NanoESP32/   (SD CSV logger)
 │   └── Experimental/
 ├── Configs/
 │   ├── FT85BD_Master/
@@ -224,6 +226,38 @@ Only after telemetry is stable:
 
 ---
 
+## Progress Notes
+
+### 2026-06 — UART bring-up (Nano ESP32)
+
+- Verified FT85BD speaks **Flipsky UART** (`AA … DD`), not VESC packets.
+- Dual-UART wiring (Serial1 → master 101, Serial2 → slave 102) confirmed for telemetry.
+- Diagnostics: `UartTelemetry_NanoESP32` for serial bring-up.
+
+### 2026-07-07 — Control mode evaluation (duty cycle vs speed vs current)
+
+Evaluated FT85BD control modes for differential drive with a human rider on the cart:
+
+| Mode | Result |
+|------|--------|
+| **Current** | Strong torque at low speed, but **too unstable** for differential drive — especially with a rider. Not suitable as the primary cart mode. |
+| **Speed** | Good **differential stability**, but at low ERPM (~400 range) motors often **stuck, buzzed, and hummed** — poor crawl behavior. |
+| **Duty cycle** | **Smooth motion at low ERPM** (~400 range) without the speed-mode lock-up/buzz. Current working direction for low-speed tuning. |
+
+Added `Arduino/Diagnostics/UartTelemetryLogger_NanoESP32/` — Nano ESP32 + **Adafruit microSD SPI breakout** logs dual-UART telemetry (voltage, RPM, duty, current, temps) to CSV for post-run analysis while testing control modes.
+
+---
+
+## TODO
+
+- [ ] **Steering tuning at low RPM** — `SPEED_STEERING_GAIN` in `UartSpeedController_NanoESP32` is too weak at lower speeds; increase low-RPM steering authority without destabilizing the cart.
+- [ ] Correlate SD log CSV data with duty-cycle settings in Flipsky ESC Tool (document optimal duty range around ~400 ERPM).
+- [ ] Compare logged duty/RPM/current traces across speed vs duty modes for the same RC input profile.
+- [ ] Update FT85BD XML configs in `Configs/` when duty-cycle setup is finalized.
+- [ ] Closed-loop wheel sync / telemetry dashboard (BLE or post-processing pipeline from SD logs).
+
+---
+
 ## Development Status
 
 ### Completed
@@ -236,28 +270,24 @@ Only after telemetry is stable:
 - Differential drive control
 - Pivot steering mode
 - Initial ESC configuration workflow
-- UART telemetry sketch (`UartSpeedController`)
+- UART telemetry sketch (`UartTelemetry_NanoESP32`, Flipsky protocol)
+- Nano ESP32 dual-UART speed controller (`UartSpeedController_NanoESP32`)
+- UART telemetry SD logger (`UartTelemetryLogger_NanoESP32`)
 
 ### In Progress
 
-- UART ERPM drive tuning and validation
-- Low-speed control tuning
-- Speed Reverse optimization
+- **Duty-cycle control** tuning for smooth low-ERPM crawl (~400 ERPM)
+- **Steering gain** at low RPM (`UartSpeedController_NanoESP32`)
+- Low-speed control tuning and SD log analysis
 - Differential steering refinement
-- Wheel synchronization improvements
 - Configuration management for master/slave ESC settings
 
 ### Planned
 
-- Full UART replacement of PPM for vehicle drive
-- ESC telemetry logging to SD / BLE bridge
-- Battery voltage monitoring
-- Current monitoring
-- Motor RPM feedback
-- Temperature monitoring
-- Bluetooth dashboard
-- Data logging
-- Closed-loop wheel speed control
+- ESC config snapshots for duty-cycle mode in `Configs/`
+- BLE / mobile telemetry dashboard
+- Automated log analysis scripts for SD CSV files
+- Closed-loop wheel speed matching
 
 ---
 
@@ -265,9 +295,11 @@ Only after telemetry is stable:
 
 - Hoverboard motors are capable low-cost EV drive units.
 - Hall sensor startup significantly improves low-speed performance.
-- Current Reverse mode provides intuitive torque-based behavior but can struggle with unloaded low-speed startup.
-- Speed Reverse mode improves wheel synchronization but requires careful ERPM and PPM range tuning.
-- PPM is useful for initial bring-up, but UART is preferred for advanced control and telemetry.
+- **Current mode** gives torque at crawl speeds but is **unstable for differential drive with a rider** — not viable as the primary cart mode.
+- **Speed mode** gives good differential stability but can **buzz/hum and hang at low ERPM** (~400 range).
+- **Duty-cycle mode** currently provides the **smoothest low-ERPM motion** on this platform; use SD logging to tune further.
+- Flipsky UART (`AA … DD`) is required for FT85BD — not VESC packets.
+- PPM remains a proven fallback; UART dual-port telemetry + SD logging supports mode comparison.
 - Master/slave ESC IDs and XML configuration files must be carefully version-controlled.
 
 ---

@@ -156,7 +156,11 @@ public:
 
   int32_t erpm() const { return rpm_; }
   float inputVoltage() const { return inputVoltage_; }
+  float inputCurrent() const { return inputCurrent_; }
   float motorCurrent() const { return motorCurrent_; }
+  float dutyCycle() const { return dutyCycle_; }
+  float tempFet() const { return tempFet_; }
+  float tempMotor() const { return tempMotor_; }
   uint8_t faultCode() const { return faultCode_; }
   uint8_t controllerId() const { return controllerId_; }
 
@@ -170,7 +174,11 @@ private:
   bool telemetryValid_ = false;
   int32_t rpm_ = 0;
   float inputVoltage_ = 0.0f;
+  float inputCurrent_ = 0.0f;
   float motorCurrent_ = 0.0f;
+  float dutyCycle_ = 0.0f;
+  float tempFet_ = 0.0f;
+  float tempMotor_ = 0.0f;
   uint8_t faultCode_ = 0;
   uint8_t controllerId_ = 0;
 
@@ -386,9 +394,16 @@ private:
         controllerId_ = data[index++];
         faultCode_ = data[index++];
         inputVoltage_ = readF16(data, 100.0f, index);
-        (void)readF32(data, 1000000.0f, index); // input current
+        inputCurrent_ = readF32(data, 1000000.0f, index);
         motorCurrent_ = readF32(data, 1000000.0f, index);
         rpm_ = readI32(data, index);
+        if ((size_t)(index + 2) <= dataLen) {
+          dutyCycle_ = readF16(data, 10000.0f, index);
+        }
+        if ((size_t)(index + 4) <= dataLen) {
+          tempFet_ = readF16(data, 100.0f, index);
+          tempMotor_ = readF16(data, 100.0f, index);
+        }
         telemetryValid_ = true;
         break;
 

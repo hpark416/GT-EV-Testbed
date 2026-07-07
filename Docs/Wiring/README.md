@@ -23,12 +23,27 @@ All grounds common.
 Radiolink CH2 -> D2
 Radiolink CH4 -> D3
 
-Nano D9 (TX) -> FT85BD COMM RX
-Nano D8 (RX) -> FT85BD COMM TX
-GND          -> FT85BD COMM GND
+Master UART: D9->COMM RX  D8<-COMM TX
+Slave UART:  D5->COMM RX  D4<-COMM TX
+GND -> both ESC COMM GND
+
+PPM (optional): D6 master, D10 slave
 ```
 
-Nano ESP32 UART is 3.3 V (direct connection to FT85BD COMM is typical). Built and uploaded via PlatformIO from `Arduino/UartSpeedController_NanoESP32/`.
+### Arduino Nano ESP32 + Adafruit microSD (UartTelemetryLogger_NanoESP32)
+
+Same dual UART as above, plus SPI microSD breakout:
+
+```text
+SD CS   -> D7
+SD MOSI -> D11
+SD MISO -> D12
+SD SCK  -> D13
+SD 3V3  -> 3V3
+SD GND  -> GND
+```
+
+Nano ESP32 UART is 3.3 V (direct connection to FT85BD COMM is typical). Built and uploaded via PlatformIO.
 
 ## FT85BD UART (COMM port)
 
@@ -37,10 +52,10 @@ Mega TX1 (D18) -> FT85BD COMM RX
 Mega RX1 (D19) -> FT85BD COMM TX
 GND            -> GND
 
-Baud rate: 115200 (default)
-Protocol:  VESC UART packets
-Master ID: 101 (direct serial)
-Slave ID:  102 (CAN forward via master)
+Baud rate: 115200
+Protocol:  Flipsky UART (AA ... DD) — not VESC packets
+Master ID: 101
+Slave ID:  102
 ```
 
 Use a bidirectional 3.3 V / 5 V level shifter between the Mega and FT85BD UART pins. Do not tie PPM and UART active control together at the same time — see README UART setup section.
