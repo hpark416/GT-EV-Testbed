@@ -1,0 +1,304 @@
+[0.5-15.5] This is a video log. I'm the purpose of this is to try and dictate each picture for AI to come in and later create notes and documentation, referencing each picture.
+[15.5-28.5] So let's begin. On May 22nd, starting with picture 52226-1, we see
+[29.5-38.5] the connector is created by deshilling a ready existing connector. It's a blood type connector as it would then
+[38.5-48.5] made to the 7W2 gold-plated high current connector sub-adapter. Picture 52226-2 is to connect
+[48.5-59.5] your connected in preparation for soldering to fasten the makeshift adapters to the stock connector for the battery.
+[59.5-71.5] Next picture 52226-3 is the bus bars that will then distribute power from the main battery source to the rest of the system.
+[71.5-87.5] 52226-4 is a close up of the bus bar with a connector that will be pulling power from the bus bar to sub-systems.
+[87.5-97.5] Picture 52226-5 is a close up of the soldered connector to the stock connector.
+[98.5-108.5] This is just a makeshift adapter because we don't have the correct part at this time and it's just an illustration of how the steps to follow are.
+[108.5-116.5] We'd be soldering the makeshift connectors to the stock adapter and then follow that with insulating and with shrink wrap.
+[116.5-124.5] Picture 52226-6 is soldering and filling up the makeshift connector to the stock connector.
+[125.5-134.5] So it doesn't come loose. Picture 52226-7 is an estimate of how things could be laid out.
+[134.5-149.5] We have in the bottom of the picture the connector with the makeshift adapter that takes power out and sends it into the high amp bus 120 amp breaker.
+[150.5-156.5] This is just the approximate location.
+[156.5-166.5] We're not sure if this is actually going to be what ends up happening but it's just the idea of how big things are and components are.
+[166.5-183.5] Picture 52226-8 is just illustrating and showing that the makeshift connector that siphons power from the stock battery now has a XT60 connector.
+[183.5-194.5] This basically is an anti-spark connector and lets us connect to the rest of the system whether that's going to be the bus bar system or directly to the ESC.
+[194.5-209.9] Picture 52226-9 is just a close up of the insulated terminals and I also label in the back of the battery here plus for positive side and negative side.
+[209.9-212.9] Sunday May 24th, 2026.
+[212.9-219.9] Image 52426-1 is just a picture of the sortment of connectors that I will be using.
+[219.9-232.9] They include XT60 connectors, bus bar, lugs as well as Anderson connectors, Anderson pole connectors, the crimped and the housing.
+[232.9-248.9] Picture 52426-2 is illustrating needing to strip off about a couple millimeters off the tip of each of the ESC motor wire leads.
+[248.9-260.4] In preparation for Anderson crimped 52426-3 is the Anderson crimped tool.
+[260.4-269.4] 52426-4 is on the right hand side we'll see the crimped leads as well as on the left hand side.
+[269.4-273.4] The crimped leads with the housing attached to it.
+[273.4-280.4] The colors here really don't matter. You just have to be consistent with how you connect the motors for phases.
+[280.4-295.4] 52426-5 is a close up of what a proper crimped terminal should look like as later on we find that some of the failure points include the crimping as well as the solder joints.
+[295.4-320.4] It's essential as you create these harnesses to check the electrical connectivity using a close circuit detection on a multimeter or a continuity check on a multimeter just to see that everything is connected into resistances are not ridiculously high indicating some kind of fault or some kind of misstake while making the harness.
+[320.4-335.4] 52426-6 is just a completed image of what it should look like with each of the phase wires for the motors one and two with their Anderson pole crimped and housing color coded correctly.
+[335.4-343.4] 52426-7 is just a system powered on for the first time we see a green light indicating that's alive.
+[343.4-349.4] Status lights on LED1 and LED2 indicating that each of the motor drivers are also alive.
+[349.4-356.4] 52426-8 is a picture of the wheel out of its chassis from the hoverboard.
+[356.4-368.4] We can note a couple of details here the diameter as well as some of the markings on the side of the wheel tell us a lot of information about what the capacity of this wheel is that we'll get into later.
+[368.4-378.4] 52426-9 is just a preliminary connection between the ESC and the wheel hub.
+[378.4-390.4] We'll see that we color coded brown, blue, yellow, correspondingly and this is in preparation for just powering up the motor with the ESC.
+[390.4-398.9] 52426-10 is a close-up of the encoder output on the wheel hub motor.
+[398.9-402.9] We'll notice that there's black, red, blue, black, away.
+[402.9-415.9] Black, red, blue, green and yellow and those correspond to ground, voltage in, A, B and C of the hull, hull motor sensor.
+[415.9-425.4] 52426-11 is a close-up of the inside of the wheel where we see some manufacturing numbers.
+[425.4-433.4] This may be useful later. The manufacturing number states 30EFC19C1A0297.
+[434.8-443.8] Picture 52426-12 is another close-up of the wheel. It has some more markings that might be useful.
+[443.8-457.4] It says E484425xw60-350. This uses for reference in case in the future.
+[457.4-470.4] Friday, May 29, 2026. Image 52926-1 is a picture of the preliminary control system where we have a microcontroller Arduino Mega
+[470.4-479.4] and this case connected to an analog joystick to feed-in motor command inputs and that then connects to the ESC on the left
+[479.4-486.4] to feed that pulse with modulation or in this case it's PPM, pulse position modulation.
+[486.4-493.4] ESC is powered by the battery, stop battery with a long lead as well as the motors being connected to the hoverboard.
+[493.4-501.9] Picture 52926-2 is a picture of the ESC leads connected to the hoverboard motor.
+[501.9-512.9] We have the hull effect sensors also wired up to the ESC so we can calibrate these motors and get their characteristics so that they run up effectively.
+[512.9-523.9] Picture 52926-3 is again a close-up but a lot more detailed on the hoverboard encoder outputs.
+[523.9-540.9] This is the preliminary test. You'll see in the top right of this picture that we had to do some adjustments like we had to do some modification to the hoverboard because at this point I did not have the correct blood connectors for the stock hoverboard.
+[540.9-548.9] So I had to put crimp on custom blood connectors I had on hand which are not kept compatible with the stock ESC connectors.
+[548.9-559.9] So unfortunately this is the hoverboard that has both hull effect sensors working and will be using for the majority of this project.
+[559.9-577.9] Saturday it made 30 of 2026. Picture 53026-1 is just a picture of the stock assembly of this hoverboard that in the bottom left is the stock assembly which has the current sensing chip sandwich between the hoverboard and the chassis of the hoverboard.
+[577.9-587.9] And on the top is just the setup that I have that is Frankenstein currently to give a quick test run of what the wheels can do.
+[587.9-601.9] Picture 53026-2. Once again it's close-up of the internals most of the PCBs were gutted. Any of the stock electronics is not necessary so we remove them for space and weight reduction.
+[601.9-608.9] Picture 53026-3 is just once again the close-up of the updated control system.
+[608.9-621.9] We have the EC in the bottom left connected to the hoverboard and on the top left we have the Arduino Mega but instead of the analog joystick we have now replaced this with a RC receiver from radio link.
+[621.9-641.7] Wednesday June 3rd, 2026. Picture 63026-1 is a picture of something that we realized after doing some testing and finding some frustrations after doing physical testing and power tuning on the ESC.
+[641.7-653.7] The main thing is that something is minuscule as a connector being not crimped well or a solder joint not being welded at a hot enough temperature can result in the wire not being an effective connector.
+[653.7-670.7] And this was a very big point that took some time to diagnose since crimping was not something that I usually have trouble with but this was the first time that this green wire here in this picture actually didn't have a good electrical connectivity
+[670.7-677.7] and it kept on making the calibration or tuning of the wheel hub motors almost impossible and very intermittent.
+[677.7-682.7] So when making these harnesses make sure to check as you create them.
+[682.7-694.7] Picture 63026-2 is just the side by side picture of two different hoverboard, deconstructed and stripped of its stock electronics.
+[694.7-703.7] What we'll notice later is that there are some issues and differences between these two as one of them was mainly tested on by the electronics lab.
+[703.7-720.7] And some of the components that are in the wheels are actually broken which we'll find out later in the notes but it was something that you wouldn't think would be broken and it would have a lot of implications and time delays.
+[720.7-734.7] Picture 60326-3 is just a picture of the test system. We have the AC hooked up to the hoverboard and we're doing some initial motor runs with power from the battery.
+[734.7-749.7] 60326-4 is the multimeter. This is just showing that you should have it to the continuity test which is indicated by an audio kind of icon on the multimeter.
+[749.7-759.7] And as long as the wires you create and after you crimp them in the auditorium have near zero resistance or maybe around two ohms it should be fine.
+[759.7-775.7] You can see in picture 60326-5 that this green wire was the problematic one and I'm just showing this close up that all that freight insulation, all that freight wiring could be problematic.
+[775.7-782.7] Maybe the crimp was too much on the insulated part and not enough on the copper wires.
+[783.7-795.7] 60326-6 is a picture of another issue point where it's to the stock leads of the motors.
+[795.7-816.7] They have a very thick and stranded wire and when we retrofit extensions onto these they have the soldered on with high temperature and rosin to help re-flow and wet the solder joints on each so there's good connectivity.
+[816.7-830.7] This is also another place that I was surprised that had a failure point is that it was a cold solder joint so therefore there was no electrical connectivity happening to effectively allow me to tune the motors.
+[830.7-842.7] 60326-7 is just a close up of that cold solder joint we can see that it's rough and there's exposed patches that don't have solder very frustrating.
+[842.7-855.7] Picture 60326-8 is just showing that at this time on soldering it I'm using a rosin paste flux to help re-flow and transfer heat evenly throughout the new solder joint.
+[855.7-868.8] Picture 60326-9 is the re-flow and redone joint so it should be a nice solid solder joint.
+[868.8-879.8] Tuesday, June 4th, 26th. This is basically with the wheels mounted to the bottom of the chassis for initial tests with it loaded with the human rider weight.
+[879.8-900.8] At this point we're trying to figure out where these wires should exit and go up to meet the electronics and where should the electronics be housed so that way they can be attached fairly to the frame but also accessible so that the leads of the motors don't have to travel everywhere and possibly interfere with where the rider sits.
+[900.8-919.2] Picture 60426-2 is just me pulling the leads out of the way to show the length we can either move them to the front of the car or to the back but now we have to figure out where we want to mount the electronics and how we're going to mount it to the chassis securely.
+[919.2-932.2] Picture 60426-3 is just the extent of all the wiring and modules that this car is going to need to have a new mounting position for.
+[932.2-942.2] The battery being the largest kind of piece that's going to have a new position and on the left hand side we actually have the capability to install a brake light.
+[942.2-953.2] Although on this ESC the flip ski dual channel we noticed that it's not a dynamic light it's more of an ambient light.
+[953.2-971.2] There's also headlights and horn function on this ESC however I did not really test with those but I did notice that they were brake lights so the brake lights they could theoretically be connected to a relay that's controlled by the art we know based on the input signals for driving it to turn on and off.
+[971.2-979.0] But so far we haven't got to that.
+[979.0-1001.0] Once they June 10th, 2026. Picture 61026-1 shows me finding out that on the back of the Mecha kit there actually are these holes that you can pop out and under the holes you'll find screw holes where you can insert bolts and fasten auxiliary modules.
+[1001.0-1021.0] This is something that was built in stock to the product of the hoverboard kit but it was meant for their products so having to figure out what kind of bolts it was a little bit challenging but through trial and error we figured out that they were M6 bolts.
+[1021.0-1032.0] Picture 61026-2. I'm just pointing out that you can use flush cutters to cut away the plastic to access these auxiliary bolts on the back of the Mecha kit behind the seat.
+[1032.0-1045.0] Picture 61026-3 is just a proceed from Home Depot where I quickly had to get more of these bolts because the adventure video wasn't always accessible.
+[1045.0-1063.0] So having an idea of what these bolts were, I was able to quickly go ahead and verify and get a few different pieces of hardware to check out different lengths and how I'd fasten, let's say, a plywood board to the back of this Mecha kit including washers and bolts.
+[1063.0-1079.6] Picture 61026-4 is just me trying out a configuration of how the battery could mount low and flat would be ideal as something you would notice during the course when we use the Mecha kit is that the cart is very tall.
+[1079.6-1091.6] It has a high sensor mass which is really bad especially for heavier riders like the people taking this course and it has a tendency to tip forward and scrape the front frame.
+[1091.6-1108.7] It's slowly chipping away at the Mecha kit itself so ideally having more weight towards the back and lower to the cart would make it have better traction and performance and stability.
+[1108.7-1129.7] Picture 61026-5 is identifying that underneath the foam covers on the seat at these four locations you'll see that there are bolts that you can actually access to remove the seat and picture 61026-6 is the seat removed and we can see that there are more bolts to remove even more plastic.
+[1129.7-1140.7] However, at this point we just went to observe and see, take some measurements so we can go ahead and CAD something that would fit in the back to hold all the new electronics.
+[1140.7-1160.8] 61026-7 is just a close-up of the M6 bolts being fitted back into the auxiliary holes on the back of the Mecha kit and we can see that there's a certain lip that we have to be careful when we CAD something to fit to it.
+[1160.8-1185.8] Picture 61026-8 is an image of me using foam board to mark up possible platform that we can laser cut or figure out how to fabricate with sheet metal to hold all the new electronics and whatever might be added on into the future to make it more advanced of a cart very securely.
+[1186.8-1208.8] But this is initial measurements to kind of get an idea of where things should be, what holes should be accessible, what buttons, for example there's a battery access hole in the back of the Mecha kit for the stock electronics but initially I did have a cut out but as I go about this project since we're not going to be using any of the stock electronics there's no point to make access holes for those.
+[1208.8-1227.8] Picture 61026-9 is me trying to figure out how can we minimize this space here in the back because we have to cut for when these cards are in storage they have only a limit amount of space and I'm not sure exactly how much lee we have on the back while being able to still fit on the racks in the Candida building.
+[1227.8-1256.8] 61026-10 is once again just switching up the battery orientation to see what might work this one was the one that I like best so far close to the back you're able to visibly see the battery light indicator to see that's alive the access point for the stock battery port plug is very easy and it isn't endangered being crushed by the seat itself.
+[1257.8-1269.8] Picture 61026-11 is the battery new orientation flat and I want to see how much it extends out this is just all kind of ideating at this point nothing's set in stone.
+[1269.8-1277.8] Picture 61026-12 is a good start of a base board that will sit on the back of the cart.
+[1277.8-1291.8] We can see it has like a triangular polygon shape it has a little access hole for the power button in case we want to access the Bluetooth stock features but in this case we did not explore that yet too much the Bluetooth connectivity.
+[1291.8-1304.8] We outline things like the bolt sizes and the clearances as well as where the four bolts will have to be in relationship to one of the edges to kind of get a sense of when we lazy cut this will it all fit.
+[1304.8-1316.8] Picture 61026-13 is a close up of some of the initial measurements and cut regions to cut out of the phone board to see if things fit up and line up correctly.
+[1316.8-1333.2] 61026-14 other side of the phone board that wasn't shown in previous picture picture 61026-15 is kind of the bulk of electronics that will need to sit on the back.
+[1333.2-1345.2] We can see that the battery takes a large portion of the space ESC the wire leads also have an issue of being kind of cumbersome especially with such limited space.
+[1345.2-1353.2] So we can also see the amount of wires that have to go to the microcontroller this can definitely be reduced and minimized with a different controller later on.
+[1353.2-1369.2] Picture 61026-16 is the other side when the hoverboard without the stock electronics is strapped into the mecha kit with the wires being routed towards the back of the kit towards the back of the cart.
+[1369.2-1378.2] We notice that it be a good idea to have some kind of mechanical clamp to keep these wires from being pulled and tugged and being unplugged.
+[1378.2-1398.2] So in picture 61026-17 we kind of tried putting a 3M adhesive hook and loop kind of system but it would not attach to the casted metal on the hoverboard.
+[1398.2-1404.2] So we're going to have to figure out a new system here. Picture 61026-18.
+[1404.2-1417.2] We simply just reused a part of the hoverboard that was used for mounting some kind of electronics and it actually was able to clamp down on the harness relatively well.
+[1417.2-1422.2] We actually had to pat it with some tape to really make sure it had some good grip but it did its job well.
+[1423.2-1426.2] Picture 61026-19.
+[1426.2-1435.6] We just kind of break the harness so that way it keeps it easier to manipulate and route to the back.
+[1435.6-1449.6] Picture 61026-20 is just a picture of the entire prototype on the phone board of what a decent sized carrier port for the new electronics could be.
+[1449.6-1462.6] Picture 61026-21 is a MDF cutout done on a laser cutter at home of a minimal of a smaller carrier board.
+[1462.6-1475.6] This was just to see if MDF was strong enough. However moving forward probably plywood or sheet metal would be used just because MDF has low moisture resistance and can warp and rot easily.
+[1475.6-1486.6] 61026-22 is just illustrating how with the makeshift battery port solution with random components.
+[1486.6-1497.6] We see that there needs to be some kind of space spacing given between the back of the seat and the battery, whether it's mounted vertically if it is mounted vertically.
+[1497.6-1508.6] Picture 61026-23 is just another orientation or not is another perspective of that vertical orientation.
+[1508.6-1521.6] Picture 61026-24 is an illustration of how the baseboard doesn't sit exactly flush to the top back of the mecca kit and this will have to be addressed in the future.
+[1521.6-1546.6] It is to be noted that the bolts actually squish the mecca kits plastic shell as there's space between the metal frame and the MDF which means that the connection or these bolts that connected to the mecca kit are the best and can actually deform over time.
+[1546.6-1568.6] Picture 61026-25 is just quick prototyping with some 2x4s to see if we can mount this thing to the MDF quickly and reliably for some testing without the worry of it just falling off and damaging components which should be no good.
+[1568.6-1584.6] Picture 61026-26 is just the ideation or concept of using 2x4s to make structures to attach the battery to the back of the kit.
+[1584.6-1595.6] Picture 61026-27 is how these 2x4s would sandwich the lip of the battery.
+[1595.6-1610.6] However, after assessing the woodworking and needing to do a lot of woodworking for if we were to upgrade many carts this was not very realistic as it would be mixing a lot of electronics with woodworking.
+[1610.6-1616.6] Ideally having some kind of way to sheet metal bend would be the fastest way to upgrade all the carts.
+[1616.6-1636.6] Friday, June 12, 2026. Picture 61226-1 is me getting ready to cat up the battery because there aren't cat models online and knowing where these bolt holes are going to be very important for how I mounted to the back of the chassis or the electronics plate carrier.
+[1636.6-1650.6] So this image is just in preparation. It has a ruler on top of the battery as I prepared to take it to a cat software to calibrate and approximately begin iteratively finding out where these holes are.
+[1650.6-1668.9] Image 61226-2 is in the program Fusion 360 cat software. We have the image being calibrated to the right size approximately however we face parallax issues with the image so this can be iterative process.
+[1668.9-1690.9] Image 61226-3 is a very basic concept of we have the holes for where the battery will attach to the fingerprint as well as kind of approximating where the plug for the battery power will have to be and seeing whether our measurements are accurate or not.
+[1690.9-1706.9] 61226-4 is me splitting up the frame into two pieces since my printer is not big enough to handle this in one go. Image 61226-5 is just another orientation of that 3D print version 1.
+[1706.9-1716.9] 61226-6 is in bamboo line up slicer where preparing for the print parts take about an hour and a half each.
+[1716.9-1732.9] 61226-7 is in the cat we are working towards a more forgiving setup where we have pieces cut out of MDF as well as a 3D printed insert for the power plug in case it's not right.
+[1732.9-1744.9] We can make most progress by slowly iterating on different parts. In the end we didn't use this as the 3D printed parts were slowly adjusted.
+[1744.9-1756.9] Next picture 61226-8 is meshing up different reference pictures in order to kind of get idea of how things will have to be spaced.
+[1756.9-1770.9] It wasn't very helpful at this point just because all the images faced a lot of camera parallax issues but it was kind of interesting to see how we can slowly create an assembly to work off.
+[1770.9-1790.1] 61226-9 is the 3D printed part came out well however I realized I didn't have screws to actually mount the stock battery plug to the battery and we had to just kind of use whatever we had on hand.
+[1790.1-1803.1] 61226-10 we noticed that the a lot of things did not line up here this was the first time first try and we have a lot of fixes that we need to make first of all.
+[1803.1-1815.1] We'll notice that the top left and bottom right holes for the battery didn't actually line up and this is probably because I relied too much on the image approximation and on the top middle we'll see the battery plug.
+[1815.1-1821.1] You'll see how it's not correctly in the center which is a problem so that has to be fixed.
+[1821.1-1837.1] Picture 61226-11 is just a proof that you know with this stock battery plug and the makeshift harness we made to it we can attach it to the 3D print however since this 3D print was mislined it wouldn't work.
+[1837.1-1853.1] Picture 61226-12 is just the other side of it we have protruding screws because these aren't the correct screws but we just use whatever we had on hand and this actually securely amounts it to the plug the power port on the 3D print for alignment.
+[1854.1-1878.1] 61226-13 if we force it force the 3D print to fit the right hand side actually pops off and the middle does line up and we're able to connect it and the clearances that were catted in there do all meet the requirements so just editing the overall dimension of 3D print and fixing up the mounting holes to the battery from the 3D print will be what needs to be updated.
+[1878.1-1898.1] Picture 61226-14 this is just a close-up of that plug that we created early on it uses bullet connectors to kind of latch on to the pins of the positive negative of the battery access plug.
+[1898.1-1909.1] We don't end up using any of those inter-media of those smaller pins those are for the BMS information to really information to the app that's built into stock segway but we don't have access to that.
+[1910.1-1922.1] So something to note here is that we're not sure what screws actually fit into the metal housing to connect to the battery.
+[1923.1-1932.1] It was suspected it's 2.5 m2.5 or m3 however we haven't had we don't have this hardware on hand to test.
+[1933.1-1936.1] June 30th, 2026.
+[1936.1-1951.1] In the 61326-1 we can see that when we have the other side of the 3D print done we can't actually fit it on there because the pieces are not they didn't have enough length on each side to connect them.
+[1952.1-1956.1] So we're going to start with the interlock the fingers.
+[1956.1-1964.1] The hex nut profiles where well tolerance so those fit well into the 3D prints.
+[1964.1-1976.1] Picture 61326-2 is me taking a virtual picture to take the CAD to begin making a mock-up of the ESC to see how we can start mounting all these different pieces together.
+[1976.1-1981.1] The 61326-3 is the mock-up made in Fusion 360.
+[1981.1-2005.1] Mainly I got all the heights and clearances and bandwidth of the lead wires catted in so that as I make a larger assembly of all the different components together it's easier to see and visualize failure points or things that might be missed such as wire routing as well as the hardware to mount the plywood or the MDF electronic spaceport.
+[2005.1-2008.1] June 14th, 2026.
+[2008.1-2013.1] We updated the frame, the alignment.
+[2013.1-2025.4] We updated the 3D printed part that attaches to the battery which also then lets us automatically position the power port to the battery.
+[2025.4-2028.4] And this version was better but not perfect.
+[2028.4-2034.4] We noticed that there's a gap in between the two pieces which means that the overall length is still too short.
+[2034.4-2043.4] It's very minor and for now we just went with this overall size as you can force it to fit.
+[2043.4-2054.4] 61426-2 is just a close-up of how the battery sits the battery plug sits well in the 3D printed frame and actually connects to the battery.
+[2054.4-2057.4] June 20th, 2026.
+[2057.4-2066.4] We made some initial prototypes for battery supports that let us slot in the battery even forward or backwards.
+[2066.4-2076.4] This lets us kind of figure out approximately where on the base board we want the battery to be mounted and allows us to actually do some test where we ride on the cart.
+[2076.4-2083.4] At this point we weren't able to ride it just because all the electronics were sitting in the seat and there was nowhere for a human to sit down.
+[2083.4-2092.4] So being able to test this system with the real weight or load that the system will face was important and these were printed out in carbon fiber PLA
+[2092.4-2104.4] just because they're going to be having to resist a lot of vibrations and the batteries kind of heavy so we made them reinforce them a lot.
+[2104.4-2109.4] These were mounted to the plywood with just wood screws.
+[2109.4-2113.4] Picture 62026-2.
+[2113.4-2123.4] Another picture from a different perspective of the battery sitting well into those 3D printed adapters that support the battery vertically.
+[2123.4-2134.9] Picture 62026-3 is just another picture.
+[2134.9-2142.9] The supports actually did a really good job and I was so surprised and something so small was so sturdy.
+[2142.9-2162.3] 62026-4 is the ideation of where we can mount the ESC. Ideally we put everything as compact together as possible so the ESC was ideated to maybe sit on the back of the battery with the Arduino on the left hand side, eventually in the future.
+[2162.3-2178.3] 62026-5 is just some of my scratch work as I take measurements. For example on the bottom left we can see back of the seat is at approximately 67.8 degrees from horizontal.
+[2178.3-2185.3] That means that our battery has to sit lower than that angle to fit and slot in that angle.
+[2187.7-2191.7] We also took some measurements of the fixes that needed to be made.
+[2191.7-2198.7] For example that gap between the two pieces on the version 2 of the battery holder is it needs to be widened.
+[2198.7-2206.7] It needs to be lengthened by 0.84 millimeters because there is a 0.84 millimeter gap that exists between the 3D printed parts.
+[2206.7-2214.7] As I said we forced them to fit and that worked for now but in the future a small edit would go a long way.
+[2214.7-2222.7] 62026-6 is the full assembly in CAD.
+[2222.7-2228.7] We were able to visualize what we wanted in CAD and make it a reality.
+[2228.7-2231.7] 2 in 20 seconds, 2026.
+[2231.7-2243.7] 62226-1 is the electronics mounted with wood screws onto a plywood baseboard that's larger than what the original MDM version was.
+[2244.7-2247.7] It allowed us to really play with where things are mounted.
+[2247.7-2253.7] All the electronics from the hoverboard are routed to the back and connected to the ESC hall wires included.
+[2253.7-2259.7] The battery plug is pretty long which could be like shortened in the future.
+[2259.7-2265.7] We have the radio link RC transceiver mounted and strapped onto the back with some Velcro.
+[2265.7-2274.2] The Arduino Mega which is a temporary substitute for microcontroller attached to the baseboard as well.
+[2274.2-2277.2] 62226-2.
+[2277.2-2280.2] This is another perspective once the battery is all plugged in.
+[2280.2-2284.2] We can see that the battery plugs aren't being crushed by the back of the seat.
+[2284.2-2295.3] This is great and we're ready for some initial drive tests to see what we're able to do with a human onboard.
+[2295.3-2302.3] Between June 22nd and June 30th there is a gap in progress and this is due to ride factors.
+[2302.3-2306.3] There was family emergency as well as I had to say for another exam.
+[2306.3-2309.3] So this would resume in about a week.
+[2309.3-2312.3] During this time software work was in progress.
+[2312.3-2319.3] However, it wasn't very well documented as I quickly changed code and for a new it.
+[2319.3-2325.3] I wasn't able to log what happened at what time for more version.
+[2325.3-2333.3] And eventually we would transition to GitHub to kind of consolidate as well as track the software progress.
+[2333.3-2342.3] Initially during these drive tests we used a simple PPM or PWM controller to make the cart move.
+[2342.3-2348.3] But in the future we want to move to a more advanced UART protocol which gets information that we need for the course.
+[2348.3-2363.9] Like battery voltage, current sonda motor, battery currents, time log data and some other useful information like the power inputs to the wheels.
+[2363.9-2366.9] June 30th, 2026.
+[2366.9-2374.9] We did some minor wire harness creation for the second ESC variation but we hit a blocker since some of the materials still have not come in.
+[2374.9-2394.9] The second ESC variation is the original VESC controller which has access to a lot more firmware capabilities than this hoppy grade flip ski dual port ESC that we've been working with July 1st, 2026.
+[2394.9-2421.9] I ordered the XT90 connectors on Amazon and they'd be driving up Friday so I can continue on the two different ESCs however with the second ESC the VESC variant I would find out later how much more intricate and perilous that one would be since that one gives you so much more accessibility to everything you have the ability to break a lot of things quickly.
+[2421.9-2430.9] So for the most part of this Trufford concept project for tin ski we will be using the flip ski ESCs.
+[2430.9-2445.9] At this day we began to really organize the engineering logs. Pictures were being uploaded to the Figma to then be dictated into notes where it's going to be a lot more connected to the GitHub.
+[2445.9-2456.9] We were working on this day to get you work to post Arduino just some simple information from the cart like battery and voltage.
+[2456.9-2466.9] There was some troubles we face some troubles on this day for example that the ESCs logic level is actually 3.3 volts not 5 volts.
+[2466.9-2484.9] So Arduino Mega being 5 volts we made a mistake and connected 5 volts 3 volts and now we need to figure out if we damaged anything so in picture 7, 0, 1, 2, 6, 1, 7, 0, 1, 2, 6, 2, 7, 0, 1, 2, 6, 3.
+[2484.9-2494.9] We are probing with a oscilloscope, a lab view, mydac, national instruments, mydac, which isn't the greatest oscilloscope but it lets us see information.
+[2494.9-2506.9] And we can see that the arcs and tx lines on the ESE are showing around 3 volts 3.3 which is great because that means it is still functioning hopefully.
+[2506.9-2513.9] That's an initial assessment that it's still functioning because it's producing the correct voltage and it's stable.
+[2513.9-2521.9] Later on I find out that there was some simple things that weren't connected and we were able to actually see things posting.
+[2521.9-2550.9] In picture 7, 0, 1, 2, 6, dash 4 this is the serial output of the Arduino which is communicating through your art to take in packets from the ESC to report on the master side which is only 1 motor, the voltage of the battery, the RPM of the wheel, the current at the motor, any fault codes and what the idea of the motor is on the ESC can bus.
+[2550.9-2558.9] Picture 7, 0, 1, 2, 6, dash 5 is the successful output of both master and slave side.
+[2558.9-2566.9] We have them saying slave 102 which is the motor ID and master 101 motor ID both report the same approximate voltage of battery.
+[2566.9-2571.9] RPMs ID's currents and faults are all correct here.
+[2571.9-2582.9] Picture 7, 0, 1, 2, 6, dash 6 is a visual of when the power is being demanded by PPM.
+[2582.9-2593.6] We can see feeds like power, the ERPM which is a wheel speed, battery current and motor current.
+[2593.6-2604.6] We don't have temperature information and since our encoder isn't something hired in a haul sensor, we don't actually get angle data.
+[2604.6-2611.6] If you want angle data you need to use higher caliber encoder, not haul effect sensor.
+[2611.6-2619.8] 7, 0, 1, 2, 6, dash 7 is just the control setup picture.
+[2619.8-2628.8] We use the throttle response of 2 so the higher this number is the faster the throttle will react to your steering.
+[2628.8-2632.8] We have things like the signal ramp and signal ramp time negative.
+[2632.8-2635.8] These are how fast accelerates from 0 to full.
+[2635.8-2640.8] That's the time it takes to get from 0 to full and how fast it goes from full to 0.
+[2641.8-2645.8] We say we want input signal type to be UART.
+[2645.8-2651.8] However, later on we'll find out that UART can't be commanded on this hobby grade ESC.
+[2651.8-2662.6] It can only extract information is what I discovered later on.
+[2662.6-2665.6] Friday, July 3rd, 2026.
+[2665.6-2674.6] We boot up the VEC tool for the second ESC and we kind of get an idea of how different the amount of configurability is between
+[2674.6-2681.6] the flip ski modified version, very simple package and the original VEC tool.
+[2681.6-2684.6] The VEC tool has a lot of similarities.
+[2684.6-2691.6] However, it also has a lot more capabilities that we'll start to explore in these coming up blogs.
+[2691.6-2699.6] Picture 70326-2 is some of the initial configurations for the flip ski model.
+[2700.6-2705.6] We will set the start mode to be Hall and the motor sensor port to be Hall of X sensors.
+[2705.6-2711.6] We want the rotation direction to be determined when you tune the motors initially, when you do initial calibration.
+[2711.6-2718.6] That way both master and slave-side move in the same direction when the same inputs are given.
+[2718.6-2723.6] It's good to change the direction here if it's going in the wrong direction instead of doing that in software.
+[2723.6-2728.6] Just to keep it simple, when you get to the Arduino side to create firmware to drive these.
+[2728.6-2735.6] Zero-duty mode basically is what does the motor do when we see input signal zero or neutral.
+[2735.6-2741.6] And keep output means that it'll stay break or shorts are good so that doesn't coast.
+[2741.6-2744.6] We have observer ERPM threshold.
+[2744.6-2752.6] We set this to 400 because through testing with the ESC tool, we find that the motors really struggle at very low RPM.
+[2752.6-2757.6] So around 400 was a good enough threshold for it to work well.
+[2757.6-2760.6] FOC brake duty mode basically.
+[2760.6-2764.6] This is supposed to activate a brake.
+[2764.6-2768.6] The brake is just a short circuit so it's not regenerating.
+[2768.6-2777.6] But this would be a hard brake and it's based on the duty cycle so if it exceeds certain threshold on the around neutral, it should break the motors.
+[2777.6-2783.6] I will note that this wasn't very easy to figure out.
+[2783.6-2787.6] This FOC brake mode, I'm not sure if it actually applies to our setup.
+[2787.6-2793.6] It may be for a higher level of motor control.
+[2793.6-2797.6] So this was a very noticeable effect of the FOC brake mode.
+[2797.6-2802.6] More noticeable behavior was from the zero-duty mode.
+[2802.6-2811.6] Keep output basically held it break near zero and no other option on this basically the coast.
+[2811.6-2813.6] Battery setup is important.
+[2813.6-2818.6] It's a 15 cell battery so 15S.
+[2818.6-2826.6] Most of the values on the top are what the cell chemistry is for each of the cells that are built into the stock cell battery.
+[2826.6-2828.6] So many commercial batteries.
+[2828.6-2831.6] We set up maximum ERPMs 22,000.
+[2831.6-2834.6] These are all arbitrary so far and negative 9,000.
+[2834.6-2837.6] Just since reversing shouldn't be as fast as going forward.
+[2837.6-2845.6] We have maximum wattages for the positive power and negative power once again negative should be less than forward.
+[2845.6-2850.6] Picture 70326-4 is the max current setup.
+[2850.6-2856.6] This is really important as this is what protects your battery as well as the BMS it built into the battery.
+[2856.6-2866.6] We set the motor current really high at this point because I want to see if the motors were capable of driving a 200 pound payload on the cart up a pretty steep grade hill.
+[2866.6-2879.6] The results were pretty successful however stability and control for differential drive which is cart is which means that there's two main wheels that control both acceleration forward and backward and turning.
+[2879.6-2892.6] In current control mode it was very unstable so if we go up the ramp at an angle it doesn't really count for drifting so you'll spin out very quickly.
+[2892.6-2902.6] But at 60 amps per motor and a battery current at 10 in current control mode it did perform reasonably well.
+[2902.6-2910.6] And we know that it could actually power the payload that we need which are called students that run on these things effectively.
+[2910.6-2921.6] Picture 70326-5 is the control setup page and we'll see as I mentioned level two throttle response this can be you know changed up or down.
+[2921.6-2930.6] Input signal deadband means how much wiggle room you have from neutral if your if your remote control is kind of old and it has like a lot of give.
+[2930.6-2943.6] And that means that near zero it's actually wiggling and not a very stable signal then you can increase the deadband to count for that wiggle and not have the motor move without you actually wanting to move.
+[2943.6-2957.6] Signal random time positive signal random time negative we set the top second for each and we actually need to use ppm for the input signal type since you are doesn't actually work which means that we have to use a simple PWM to control forward backward.
+[2957.6-2968.1] Reverse time delay is set to zero because we're doing some initial testing and this is something I'll be tuned later.
+[2968.1-2977.1] Picture 70326-6 is a sample image of what the output of a motor tuning calibration test.
+[2977.1-2992.1] When you first plug up the motors you have to push auto calibrate and it basically identifies each of the motors what their canvas ID is, how they start up as well as all their characteristic electronic electrical characteristic parameters are.
+[2992.1-3000.1] Main thing is that you have to watch for here is the sensor code sensor code one means that it's functioning and startup mode being in haul is what we want.
+[3000.1-3019.1] You can see on motor one here that this is where we find our first issue major physical block for this is that sensor on motor number one reports code six meaning that it's a connection between the haul sensor and the ESC isn't good there might be a issue here.
+[3020.1-3026.1] We'll also see that the startup mode is IPDS which is not home which indicates another issue here.
+[3026.1-3047.2] This is one of the hoverboard motors that was tested on by electronic slab so it's expected that one of the hall effect motors may have been damaged when being pushed through some testing that I'm unaware of July 7th, 2026.
+[3047.2-3053.2] We're beginning to debug why the cart is shuddering all of a sudden and it's in duty control mode.
+[3053.2-3061.2] I'm updating the repo for diagnostic tools and for telemetry read under new cart power tests various configurations in the flipsky tool.
+[3061.2-3071.2] We want to check things like battery sag, BMS on the stock battery what trips that battery if there's noise on the logic level communication.
+[3071.2-3084.2] It could even be something as simple as like the PCBs are being shorted out by the metal screws that be are attaching it to the plywood.
+[3084.2-3093.2] I've also began wondering whether or not we should use a higher power battery if needed for duty cycle mode.
+[3093.2-3104.2] This cycle mode was just very optimal since it allowed us to control the motors similar to current control where low speeds are very easy to sustain and it's smooth.
+[3104.2-3109.2] Versus the current control mode which differential drive makes us spin out and it's very dangerous.
+[3109.2-3121.5] I actually wiped out a couple times on the cart and this means that I want to prioritize being able to get duty control mode much higher than anything else.
+[3121.5-3130.5] So we kind of get a estimation of the possible battery I had on hand which is a 48 volt 20 amp hour battery.
+[3130.5-3137.5] We want to see what the differences are with the stock battery and it has more current discharge power.
+[3137.5-3148.5] So it's suspected that the stock segue battery has around 15 amps but this is double that current limit and this is just all conjecture.
+[3148.5-3155.5] So picture 70726-1 shows estimates specifications using AI to extract information off the web.
+[3155.5-3167.5] Of the product page shown in page 70726-2 what that means in terms of electrical parameters to feed into flopski.
+[3167.5-3179.5] Picture 70726-3 is a request number from me made to the machine to receive the CAD files that drew had asked for.
+[3179.5-3193.5] This CAD file is the spacer that exists between the chassis and the hoverboard battery and that currently houses the current sensors in the courses hardware.
+[3193.5-3204.5] I would like to access this file so I can save some time from having to remake the wheel and having to re-measure and iterate that and for the most part really work on the firmware.
+[3204.5-3208.5] So this request has been made when I'll just if it can get through.
+[3208.5-3216.5] And picture 70726-4 is an image of the files that are existing in the EV and grid summer project.
+[3216.5-3239.5] I've been working on just kind of getting some templates made for the ESC and microcontroller to get approximate like if their footprints match up to what the specifications say online as this is just in preparation for integration between all the different electronics that need to be situated on the back panel on the micro kit.

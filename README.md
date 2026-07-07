@@ -134,6 +134,7 @@ Slave ESC ID: 102
 │   ├── FT85BD_Slave/
 │   └── Control_Setups/
 ├── Docs/
+│   ├── Logbook/          ← engineering log (dated photo entries)
 │   ├── Wiring/
 │   ├── Images/
 │   ├── Notes/
@@ -245,6 +246,11 @@ Evaluated FT85BD control modes for differential drive with a human rider on the 
 | **Duty cycle** | **Smooth motion at low ERPM** (~400 range) without the speed-mode lock-up/buzz. Current working direction for low-speed tuning. |
 
 Added `Arduino/Diagnostics/UartTelemetryLogger_NanoESP32/` — Nano ESP32 + **Adafruit microSD SPI breakout** logs dual-UART telemetry (voltage, RPM, duty, current, temps) to CSV for post-run analysis while testing control modes.
+
+### 2026-07-07 — Engineering logbook from photo narration
+
+- Created **`Docs/Logbook/`** — dated entries for **100+ images** in `Docs/Images/`, transcribed from narration video `Docs/Notes/2026-07-07 16-58-03.mp4` (video gitignored).
+- See [`Docs/Logbook/INDEX.md`](Docs/Logbook/INDEX.md) for session index (2026-05-22 through 2026-07-07).
 
 ---
 

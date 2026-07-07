@@ -1,6 +1,12 @@
 # Development Notes
 
-Informal log for GT-EV-Testbed bring-up, tuning, and test sessions. Add dated entries below or create separate markdown files per topic.
+Informal scratch notes and **local-only media** (videos are gitignored).
+
+## Engineering logbook
+
+Structured, dated entries with photos are in **[`../Logbook/`](../Logbook/)** — start at [`../Logbook/README.md`](../Logbook/README.md) and [`../Logbook/INDEX.md`](../Logbook/INDEX.md).
+
+Narration source video (local, not in git): `2026-07-07 16-58-03.mp4` in this folder.
 
 ## Suggested files
 

@@ -36,5 +36,9 @@ desktop.ini
 # Logs
 *.log
 
+# Local narration / video (engineering log source media)
+Docs/Notes/*.mp4
+*.mp4
+
 # Keep ESC configs
 !*.xml
